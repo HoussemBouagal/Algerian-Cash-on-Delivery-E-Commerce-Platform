@@ -173,7 +173,7 @@ CREATE DATABASE store;
 
 ## 🏆 Skill Level
 
-**Mid-Level to Advanced Full Stack Developer**
+**Mid-Level to Advanced Software Engineer**
 
 ---
 

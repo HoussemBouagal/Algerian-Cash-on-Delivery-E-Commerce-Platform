@@ -188,7 +188,8 @@ Read the full license in the [LICENSE](LICENSE) file.
 
 **Houssem Bouagal**  
 📧 Email: [mouhamedhoussem813@gmail.com](mailto:mouhamedhoussem813@gmail.com)  
-🔗 LinkedIn: [Houssem Bouagal](https://www.linkedin.com/in/houssem-eddine-bouagal-98025a297)  
+🔗 LinkedIn:
+ [Houssem Bouagal](https://www.linkedin.com/in/houssem-eddine-bouagal-98025a297)  
 🌐 Portfolio: [houssembouagal.github.io/Portfolio/](https://houssembouagal.github.io/Portfolio/)
 
 

@@ -161,7 +161,7 @@ define('DB_PASS', '');
 Create database:
 
 ``` sql
-CREATE DATABASE ecommerce;
+CREATE DATABASE store;
 ```
 
 ------------------------------------------------------------------------

@@ -1,0 +1,583 @@
+
+        /* الأنماط الأساسية */
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --info-color: #3b82f6;
+            --discount-color: #dc2626;
+            --discount-active: #16a34a;
+            --discount-expired: #6b7280;
+            --discount-upcoming: #f59e0b;
+            --dark-color: #1f2937;
+            --light-color: #f9fafb;
+            --sidebar-width: 250px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f5f7fb;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        /* هيكل الصفحة */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: linear-gradient(180deg, var(--dark-color), #111827);
+            color: white;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            overflow-y: auto;
+            transition: var(--transition);
+        }
+        
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        
+        .main-content {
+            margin-right: var(--sidebar-width);
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        /* المكونات */
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-admin {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-admin-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-admin-primary:hover {
+            background-color: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* الصفحات */
+        .content-page {
+            display: none;
+        }
+        
+        .content-page.active {
+            display: block;
+        }
+        
+        /* التكيف مع الشاشات الصغيرة */
+        @media (max-width: 992px) {
+            .sidebar {
+                transform: translateX(100%);
+            }
+            
+            .main-content {
+                margin-right: 0;
+            }
+        }
+      
+        /* أنماط الشريط الجانبي */
+        .sidebar-header {
+            padding: 0 1.5rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .sidebar-header h3 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+        
+        .sidebar-menu {
+            padding: 1.5rem 0;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+            border-right: 4px solid transparent;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-right-color: var(--primary-color);
+        }
+        
+        .nav-link i {
+            width: 24px;
+            margin-left: 0.75rem;
+        }
+        
+        /* الهيدر العلوي */
+        .topbar {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .toggle-sidebar {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark-color);
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+        
+        /* الجداول */
+        .table-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .table-title {
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            background-color: #f9fafb;
+            padding: 1rem 1.5rem;
+            text-align: right;
+            font-weight: 600;
+            color: var(--dark-color);
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: middle;
+        }
+        
+        tr:hover {
+            background-color: #f9fafb;
+        }
+        
+        /* نمط البحث في الجدول */
+        .table-search {
+            max-width: 300px;
+        }
+        
+        /* الأزرار الأخرى */
+        .btn-admin-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .btn-admin-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        .btn-admin-warning {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        /* الفورم */
+        .admin-form {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .form-control-admin {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control-admin:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            outline: none;
+        }
+        
+        /* رفع الصور */
+        .file-upload-area {
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            background-color: #f9fafb;
+            transition: var(--transition);
+        }
+        
+        .file-upload-area:hover {
+            border-color: var(--primary-color);
+            background-color: #f0f7ff;
+        }
+        
+        .file-upload-area.dragover {
+            border-color: var(--primary-color);
+            background-color: #e0f2fe;
+        }
+        
+        .upload-preview {
+            margin: 1rem 0;
+        }
+        
+        .upload-actions {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        /* مؤشر التحميل */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            display: none;
+        }
+        
+        .loading-spinner {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* إشعارات */
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            animation: slideInRight 0.3s ease;
+        }
+        
+        .notification.success {
+            background: #10b981;
+            color: white;
+        }
+        
+        .notification.error {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .notification.info {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        
+        /* أنماط التخفيض */
+        .discount-badge {
+            background-color: var(--discount-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+        
+        .discount-time-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+        
+        .discount-active {
+            background-color: var(--discount-active);
+            color: white;
+        }
+        
+        .discount-expired {
+            background-color: var(--discount-expired);
+            color: white;
+        }
+        
+        .discount-upcoming {
+            background-color: var(--discount-upcoming);
+            color: white;
+        }
+        
+        .price-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        
+        .discounted-price {
+            color: var(--discount-color);
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+        
+        .toggle-discount {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #d1d5db;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: var(--primary-color);
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        /* إدارة التوصيل */
+        .wilaya-price-input {
+            width: 120px;
+            text-align: left;
+            direction: ltr;
+        }
+        
+        .wilaya-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #e5e7eb;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+        
+        .price-summary {
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border: 1px solid #e2e8f0;
+        }
+        
+        /* تاريخ التخفيض */
+        .discount-date-input {
+            direction: ltr;
+            text-align: left;
+        }
+        
+        /* حقل الوقت المتبقي */
+        .time-remaining {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+        
+        .time-remaining.active {
+            color: var(--discount-active);
+        }
+        
+        .time-remaining.upcoming {
+            color: var(--discount-upcoming);
+        }
+        
+        .time-remaining.expired {
+            color: var(--discount-expired);
+        }
+        
+        /* نماذج التاريخ والتوقيت */
+        .flatpickr-calendar {
+            font-family: 'Tajawal', sans-serif;
+            direction: rtl;
+        }
+        
+        /* شريط التقدم للوقت المتبقي */
+        .discount-progress {
+            height: 6px;
+            background-color: #e5e7eb;
+            border-radius: 3px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+        
+        .discount-progress-bar {
+            height: 100%;
+            background-color: var(--discount-active);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        
+        /* التكيف مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .table-responsive {
+                overflow-x: auto;
+            }
+            
+            .toggle-sidebar {
+                display: block;
+            }
+        }

@@ -186,6 +186,7 @@ Read the full license in the [LICENSE](LICENSE) file.
 
 ## 👤 Author
 
-**Houssem Bouagal**
-📧 Email: [mouhamedhoussem813@gmail.com](mailto:mouhamedhoussem813@gmail.com)
-🔗 LinkedIn: [Houssem Bouagal](https://www.linkedin.com/in/houssem-eddine-bouagal-98025a297)
+**Houssem Bouagal**  
+📧 Email: [mouhamedhoussem813@gmail.com](mailto:mouhamedhoussem813@gmail.com)  
+🔗 LinkedIn: [Houssem Bouagal](https://www.linkedin.com/in/houssem-eddine-bouagal-98025a297)  
+
